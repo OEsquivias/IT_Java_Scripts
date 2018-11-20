@@ -3,11 +3,11 @@ package coets;
 public class Coet {
 	
 	private String codi;
-	private int propulsor;
+	private int[] propulsor;
 	
 	public Coet() {}
 	
-	public Coet(String codi, int propulsor) {
+	public Coet(String codi, int[] propulsor) {
 		this.codi = codi;
 		this.propulsor = propulsor;
 	}
@@ -18,10 +18,10 @@ public class Coet {
 	public void setCodi(String codi) {
 		this.codi = codi;
 	}
-	public int getPropulsor() {
+	public int[] getPropulsor() {
 		return propulsor;
 	}
-	public void setPropulsor(int propulsor) {
+	public void setPropulsor(int[] propulsor) {
 		this.propulsor = propulsor;
 	}
 
