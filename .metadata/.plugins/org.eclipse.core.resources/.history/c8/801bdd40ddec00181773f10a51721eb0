@@ -1,0 +1,24 @@
+package coets;
+
+import java.util.ArrayList;
+import java.util.List;
+import coets.Coet;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		List<Coet> coets = new ArrayList<>();
+		int[] list1 = {10, 30, 80};
+		coets.add(new Coet("32WESSDS", list1));
+		coets.add(new Coet("LDSFJA32", list1));
+
+		for (Coet c : coets) {
+			System.out.println(c.getCodi());
+			System.out.println(c.getPropulsor());
+
+		}
+
+	}
+
+}
