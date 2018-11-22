@@ -3,34 +3,63 @@ package coets;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 		List<Coet> coets = new ArrayList<>();
-		int[] engines1 = {10, 30, 80};
-		coets.add(new Coet("32WESSDS", engines1));
-		int[] engines2 = {30, 40, 50, 50, 30, 10};
-		coets.add(new Coet("LDSFJA32", engines2));
+
+		Coet coet1 = new Coet("32WESSDS");
+		coets.add(coet1);
+		Coet coet2 = new Coet("LDSFJA32");
+		coets.add(coet2);
+
+		int[] enginesArray1 = { 10, 30, 80 };
+		for (int e : enginesArray1) {
+			coet1.addEngine(e);
+		}
+
+		int[] enginesArray2 = { 30, 40, 50, 50, 30, 10 };
+		for (int e : enginesArray2) {
+			coet2.addEngine(e);
+		}
 
 		for (Coet c : coets) {
-			System.out.print(c.getId() + ": ");
-			for(int p : c.getMaxPower()) {
-				System.out.print(p + " ");
-			}
+			System.out.println(c.getId());
+			System.out.println("Number of engines: " + c.getEngineNum());
+			System.out.println("Max power of each engine: " + c.getEnginePower());
 			System.out.println();
-			c.accelerar();
-			for(int p : c.getPnow()) {
-				System.out.print(p + " ");
-			}
-			System.out.println();
-			c.accelerar();
-			System.out.println("Speed: " + c.getSpeed());
-			
-
 		}
-		
+
+		System.out.println("Speed coet1: " + coet1.getSpeed());
+		System.out.println("Speed coet2: " + coet2.getSpeed());
+		System.out.println();
+		for (int i = 0; i < 3; i++) {
+			coet1.gasPedal();
+			coet2.gasPedal();
+		}
+		System.out.println("Speed coet1: " + coet1.getSpeed());
+		System.out.println("Speed coet2: " + coet2.getSpeed());
+		System.out.println();
+		for (int i = 0; i < 5; i++) {
+			coet1.brake();
+		}
+		for (int i = 0; i < 7; i++) {
+			coet2.gasPedal();
+		}
+
+		System.out.println("Speed coet1: " + coet1.getSpeed());
+		System.out.println("Speed coet2: " + coet2.getSpeed());
+		System.out.println();
+
+		for (int i = 0; i < 15; i++) {
+			coet1.gasPedal();
+			coet2.gasPedal();
+		}
+
+		System.out.println("Speed coet1: " + coet1.getSpeed());
+		System.out.println("Speed coet2: " + coet2.getSpeed());
+
 	}
-	
+
 }

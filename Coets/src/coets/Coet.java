@@ -1,63 +1,81 @@
 package coets;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Coet {
 
 	private String id;
-	private int[] pmax;
-	private int[] pnow;
+	private List<Engine> enginesCoet = new ArrayList<>();
 
-	public Coet() {}
-	
-	public Coet(String id, int[] pmax) {
+	public Coet(String id) throws Exception {
+		check8Chars(id);
+		this.id = id;
 
-		this.id = are8Chars(id);
-		this.pmax = pmax;
-		this.pnow = new int[pmax.length];
+	}
 
+	public void addEngine(int maxPower) throws Exception {
+		if (maxPower <=0) {
+			throw new Exception("The engine power must be a positive integer");
+		}
+		this.enginesCoet.add(new Engine(maxPower));
 	}
 
 	public String getId() {
 		return id;
 	}
 
-	public void setId(String id) {
-		this.id = are8Chars(id);
+	public void setId(String id) throws Exception {
+		check8Chars(id);
+		this.id = id;
+	}
+	
+	public int getEngineNum() {
+		return enginesCoet.size();
 	}
 
-	public int[] getMaxPower() {
-		return pmax;
-	}
-
-	public void setMaxPower(int[] pmax) {
-		this.pmax = pmax;
-	}
-
-	public int[] getPnow() {
-		return pnow;
+	public List<Integer> getEnginePower() {
+		List<Integer> enginePower = new ArrayList<>();
+		for (Engine p : enginesCoet) {
+			enginePower.add(p.getMaxPower());
+		}
+		return enginePower;
 	}
 
 	public int getSpeed() {
 		int speed = 0;
-		for (int s : pnow) {
-			speed += s;
+		for (Engine p : enginesCoet) {
+			speed += p.getCurrentPower();
 		}
 		return speed;
 	}
 
-	public static String are8Chars(String id) {
-		if (id.length() != 8) {
-			throw new IllegalArgumentException("The id must be 8 character long");
-		} else {
-			return id;
-		}
-	}
-	
-	
-	public void accelerar() {
-		for (int i = 0; i > pnow.length; i++) {
-			pnow[i] = pnow[i] + 10;
+	public void gasPedal() throws Exception {
+		checkEngines();
+		for (Engine p : enginesCoet) {
+			p.speedUp();
 		}
 
 	}
+
+	public void brake() {
+		for (Engine p : enginesCoet) {
+			p.slowDown();
+		}
+
+	}
+
+	public void check8Chars(String id) throws Exception {
+		if (id.length() != 8) {
+			throw new Exception("The id must be 8 character long");
+		} 
+	}
+
+	public void checkEngines() throws Exception {
+		if (enginesCoet.isEmpty()) {
+			throw new Exception("There are no engines!!!");
+		}
+	}
+
 
 }
