@@ -20,14 +20,15 @@ public class Engine {
 	}
 
 	
-	public void speedUp() {
-		currentPower += 10;
+	public void speedUp(int i) {
+		currentPower += 10*i;
 		if (currentPower > maxPower) {
 			currentPower = maxPower;
 		}
 	}
 	
-	public void slowDown() {
+	public void slowDown(int i) {
+		currentPower -= 10*i;
 		if (currentPower < 0) {
 			currentPower = 0;
 		}

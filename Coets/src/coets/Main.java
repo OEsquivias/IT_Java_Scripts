@@ -34,28 +34,23 @@ public class Main {
 		System.out.println("Speed coet1: " + coet1.getSpeed());
 		System.out.println("Speed coet2: " + coet2.getSpeed());
 		System.out.println();
-		for (int i = 0; i < 3; i++) {
-			coet1.gasPedal();
-			coet2.gasPedal();
-		}
+		
+		coet1.gasPedal(3);
+		coet2.gasPedal(3);
+
 		System.out.println("Speed coet1: " + coet1.getSpeed());
 		System.out.println("Speed coet2: " + coet2.getSpeed());
 		System.out.println();
-		for (int i = 0; i < 5; i++) {
-			coet1.brake();
-		}
-		for (int i = 0; i < 7; i++) {
-			coet2.gasPedal();
-		}
+		
+		coet1.brake(5);
+		coet2.gasPedal(7);
 
 		System.out.println("Speed coet1: " + coet1.getSpeed());
 		System.out.println("Speed coet2: " + coet2.getSpeed());
 		System.out.println();
 
-		for (int i = 0; i < 15; i++) {
-			coet1.gasPedal();
-			coet2.gasPedal();
-		}
+		coet1.gasPedal(15);
+		coet2.gasPedal(15);
 
 		System.out.println("Speed coet1: " + coet1.getSpeed());
 		System.out.println("Speed coet2: " + coet2.getSpeed());

@@ -50,17 +50,17 @@ public class Coet {
 		return speed;
 	}
 
-	public void gasPedal() throws Exception {
+	public void gasPedal(int i) throws Exception {
 		checkEngines();
 		for (Engine p : enginesCoet) {
-			p.speedUp();
+			p.speedUp(i);
 		}
 
 	}
 
-	public void brake() {
+	public void brake(int i) {
 		for (Engine p : enginesCoet) {
-			p.slowDown();
+			p.slowDown(i);
 		}
 
 	}
