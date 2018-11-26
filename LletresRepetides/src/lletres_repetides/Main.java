@@ -60,21 +60,24 @@ public class Main {
 	static void fase3(String name3) {
 		String lowerName = name3.toLowerCase();
 		String noSpaceName = lowerName.replaceAll("\\s+", "");
-		countLetters(noSpaceName);
-	}
-
-	static void countLetters(String name) {
 		Map<String, Integer> mapName = new HashMap<>();
-		for (int i = 0; i < name.length(); i++) {
-			String c = String.valueOf(name.charAt(i));
-			if (mapName.containsKey(c)) {
-				mapName.put(c, mapName.get(c) + 1);
-			} else {
-				mapName.put(c, 1);
-			}
-
+		for (int i = 0; i < noSpaceName.length(); i++) {
+			countLetters(mapName, String.valueOf(noSpaceName.charAt(i)));
 		}
 		System.out.println(mapName);
+		
+		
+	}
+
+	static void countLetters(Map<String, Integer> mapNameNum, String letter) {
+			if (mapNameNum.containsKey(letter)) {
+				mapNameNum.put(letter, mapNameNum.get(letter) + 1);
+			} else {
+				mapNameNum.put(letter, 1);
+			}
+
+		
+		
 	}
 
 	static void fase4(String name4_0, String name4_1) {
