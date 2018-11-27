@@ -9,15 +9,12 @@ public class Coet {
 	private List<Engine> enginesCoet = new ArrayList<>();
 
 	public Coet(String id) throws Exception {
-		check8Chars(id);
+		checkRocketId(id);
 		this.id = id;
 
 	}
 
 	public void addEngine(int maxPower) throws Exception {
-		if (maxPower <=0) {
-			throw new Exception("The engine power must be a positive integer");
-		}
 		this.enginesCoet.add(new Engine(maxPower));
 	}
 
@@ -65,7 +62,7 @@ public class Coet {
 
 	}
 
-	public void check8Chars(String id) throws Exception {
+	public void checkRocketId(String id) throws Exception {
 		if (id.length() != 8) {
 			throw new Exception("The id must be 8 character long");
 		} 

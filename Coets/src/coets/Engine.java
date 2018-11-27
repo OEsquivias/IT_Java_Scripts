@@ -6,7 +6,10 @@ public class Engine {
 	private int currentPower;
 
 
-	public Engine(int maxPower) {
+	public Engine(int maxPower) throws Exception {
+		if (maxPower <=0) {
+			throw new Exception("The engine power must be a positive integer");
+		}
 		this.maxPower = maxPower;
 		this.currentPower = 0;
 	}
