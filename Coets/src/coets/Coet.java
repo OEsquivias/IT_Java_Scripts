@@ -23,7 +23,7 @@ public class Coet {
 	}
 
 	public void setId(String id) throws Exception {
-		check8Chars(id);
+		checkRocketId(id);
 		this.id = id;
 	}
 	
