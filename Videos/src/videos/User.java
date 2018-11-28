@@ -2,12 +2,8 @@ package videos;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-//import java.time.LocalDate;
-//import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-
-//Check if information is ok
 
 public class User {
 
@@ -83,21 +79,5 @@ public class User {
 	public void setSignup(LocalDateTime signup) {
 		this.signup = signup;
 	}
-
-//
-//	public int[] getSignupArray() {
-//		int[] signupArray = {day, month, year};
-//		return signupArray;
-//	}
-//	public String getSignupString() {
-//		String date = day + "/" + month + "/" + year;
-//		return date;
-//	}
-//
-//	public void setSignup(int day, int month, int year) {
-//		this.day = day;
-//		this.month = month;
-//		this.year = year;
-//	}
 
 }
