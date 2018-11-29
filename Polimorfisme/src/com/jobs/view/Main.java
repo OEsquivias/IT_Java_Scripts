@@ -1,6 +1,7 @@
 package com.jobs.view;
 
 import com.jobs.application.JobsController;
+import com.jobs.application.StaffMemberDTO;
 
 public class Main {
 
@@ -18,11 +19,19 @@ public class Main {
 		
 		
 		controller.payAllEmployeers();
-
+/*
+		En principi s'ha de crear un objecte DTO per cada altre objecte(Employee i volunteer), 
+		però ara només crearé un DTO per l'StaffMember per simplificar-ho.
+*/	
 		
-		for(String s : controller.getAllEmployees()) {
-			System.out.println(s);
+		for(StaffMemberDTO s : controller.getAllEmployees()) {
+			System.out.println(s.getName());
+			System.out.println(s.getAddress());
+			System.out.println(s.getPhone());
+			System.out.println(s.getTotalpaid());
+
 		}
+		
 		System.out.println();
 		for(String s : controller.getEmployeeSalary()) {
 			System.out.println(s);

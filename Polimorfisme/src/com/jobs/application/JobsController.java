@@ -1,6 +1,7 @@
 package com.jobs.application;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.jobs.domain.AbsStaffMember;
@@ -43,14 +44,15 @@ public class JobsController {
 	
 	}
 
-	public String[] getAllEmployees() throws Exception {
+	public List<StaffMemberDTO> getAllEmployees() throws Exception {
 		List<AbsStaffMember> repo = EmployeeRepository.getAllMembers();
-		String[] allEmployees = new String[repo.size()];
-		for (int i = 0; i < repo.size() ;i++ ) {
-			StaffMemberDTO member = new StaffMemberDTO(repo.get(i));
-			allEmployees[i] = member.getName();
+		List<StaffMemberDTO> staffDTO = new ArrayList<>();
+		
+		for (AbsStaffMember s : repo) {
+			staffDTO.add(new StaffMemberDTO(s));
 		}
-		return allEmployees;
+		
+		return staffDTO;
 	}
 	
 //// Previous method	
