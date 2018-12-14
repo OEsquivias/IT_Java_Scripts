@@ -1,25 +1,30 @@
 package view;
 
-import domain.Florist;
+import controller.Controller;
 
 public class Main {
 
-	public static void main(String[] args) {
-		Florist myFlorist = new Florist("FlowerPower");
-		myFlorist.addTree(2.5, 25);
-		myFlorist.addTree(2.8, 35);
-		myFlorist.addTree(2.0, 55);
+	private static Controller controller = new Controller();
+	
+	
+	public static void main(String[] args) throws Exception {
 		
-		myFlorist.addFlower("white", 5);
-		myFlorist.addFlower("black", 3);
-		myFlorist.addFlower("purple", 2.5);
+		String nameFlorist1 = "Flower Power";
+		controller.createFlorist(nameFlorist1);
+		controller.addTree(nameFlorist1, 5.85, 25);
+		controller.addTree(nameFlorist1, 2.8, 35);
+		controller.addTree(nameFlorist1, 2.14, 55);
 		
-		myFlorist.addDecoration("wood", 65);
-		myFlorist.addDecoration("wood", 47.5);
-		myFlorist.addDecoration("plastic", 30);
+		controller.addFlower(nameFlorist1, "white", 5.0);
+		controller.addFlower(nameFlorist1, "black", 3.7);
+		controller.addFlower(nameFlorist1, "purple", 2.5);
 		
-		myFlorist.getStock();
-
+		controller.addDecoration(nameFlorist1, "wood", 65);
+		controller.addDecoration(nameFlorist1, "wood", 47.5);
+		controller.addDecoration(nameFlorist1, "plastic", 30);
+		
+		controller.getAllItems(nameFlorist1);
+		
 	}
 
 }

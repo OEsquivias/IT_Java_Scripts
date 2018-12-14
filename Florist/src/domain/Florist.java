@@ -5,50 +5,37 @@ import java.util.List;
 
 public class Florist {
 
-	private String name;
-	private List<Tree> treeList = new ArrayList<>();
-	private List<Flower> flowerList = new ArrayList<>();
-	private List<Decoration> decorationList = new ArrayList<>();
+	private String floristName;
+
+	public List<Item> itemList = new ArrayList<>();
 	
-	
-	public Florist(String name) {
-		this.name = name;
+	public String getFloristName() {
+		return floristName;
+	}
+
+	public Florist(String floristName) {
+		this.floristName = floristName;
 	}
 	
-	
-	public void addTree(double height, double price) {
+	public void checkFloristName(String floristName) throws Exception {
+		if(floristName.equals("")) {
+			throw new Exception("Name cannot be empty");
+		}
+	}
+	public void addTree(double height, double price) throws Exception {
 		Tree oneTree = new Tree(height, price);
-		treeList.add(oneTree);
+		itemList.add(oneTree);
 	}
 	
-	public void addFlower(String color, double price) {
+	public void addFlower(String color, double price) throws Exception {
 		Flower oneFlower = new Flower(color, price);
-		flowerList.add(oneFlower);
+		itemList.add(oneFlower);
 	}
 	
-	public void addDecoration(String material, double price) {
+	public void addDecoration(String material, double price) throws Exception {
 		Decoration oneDecoration = new Decoration(material, price);
-		decorationList.add(oneDecoration);
+		itemList.add(oneDecoration);
 	}
 	
-	public void getStock() {
-		System.out.println(name + " stock:");
-		for (int i = 0; i<treeList.size() ; i++) {
-			Tree t = treeList.get(i);
-			
-			System.out.println("Tree " + (i+1) + ": " + t.getHeight() + "m " + t.getPrice() + "€");
-		}
-		for (int i = 0; i<flowerList.size() ; i++) {
-			Flower f = flowerList.get(i);
-			
-			System.out.println("Flower " + (i+1) + ": " + f.getColor() + " " + f.getPrice()+ "€");
-		}
-		
-		for (int i = 0; i<decorationList.size() ; i++) {
-			Decoration d = decorationList.get(i);
-			
-			System.out.println("Decoration " + (i+1) + ": " + d.getMaterial() + " " + d.getPrice()+ "€");
-		}
-		
-	}
+
 }
