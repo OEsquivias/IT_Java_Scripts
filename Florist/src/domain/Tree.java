@@ -20,4 +20,8 @@ public class Tree extends Item{
 		}
 	}
 	
+	@Override
+	public String toString() {
+		return height + " m " + price + " €.";
+	}
 }

@@ -19,4 +19,10 @@ public class Flower extends Item {
 			throw new Exception("Color cannot be empty");
 		}
 	}
+
+	@Override
+	public String toString() {
+		return color + " " + price + " €.";
+	}
+
 }

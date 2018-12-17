@@ -21,4 +21,14 @@ public class Decoration extends Item {
 			throw new Exception("Decoration must be made of wood or plastic");
 		}
 	}
+
+	
+	
+	@Override
+	public String toString() {
+		return material + " " + price + " €.";
+	}
+
+
+
 }

@@ -25,6 +25,15 @@ public class Main {
 		
 		controller.getAllItems(nameFlorist1);
 		
+		
+		String nameFlorist2 = "Flowerist";
+		controller.createFlorist(nameFlorist2);
+		controller.addTree(nameFlorist2, 5.95, 35);
+		controller.addFlower(nameFlorist2, "white", 6.0);
+		controller.addDecoration(nameFlorist2, "wood", 75);
+		controller.getAllItems(nameFlorist2);
+
+		
 	}
 
 }
