@@ -6,7 +6,6 @@ import java.util.List;
 import domain.Decoration;
 import domain.Florist;
 import domain.Flower;
-import domain.Item;
 import domain.Tree;
 
 
@@ -54,19 +53,33 @@ public class Controller {
 	
 	public void getAllTrees(String floristName) throws Exception {
 		Florist currentFlorist = getFlorist(floristName);
-		currentFlorist.getTrees();
+		int count = 1;
+		for (Tree t : currentFlorist.getTrees()) {
+			System.out.println("Tree " + count + ": " + t);
+			count++;
+		}
+
+		
 		
 	}
 	
 	public void getAllFlowers(String floristName) throws Exception {
 		Florist currentFlorist = getFlorist(floristName);
-		currentFlorist.getFlowers();
+		int count = 1;
+		for (Flower f : currentFlorist.getFlowers()) {
+			System.out.println("Flower " + count + ": " + f);
+			count++;
+		}
 	}
 	
 	
 	public void getAllDecorations(String floristName) throws Exception {
 		Florist currentFlorist = getFlorist(floristName);
-		currentFlorist.getDecorations();
+		int count = 1;
+		for (Decoration d : currentFlorist.getDecorations()) {
+			System.out.println("Decoration " + count + ": " + d);
+			count++;
+		}
 	}
 	
 	

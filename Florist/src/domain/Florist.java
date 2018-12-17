@@ -37,39 +37,33 @@ public class Florist {
 		itemList.add(oneDecoration);
 	}
 	
-	public void getTrees() {
+	public List<Tree> getTrees() {
 		List<Tree> treeList = new ArrayList<>();
-		int count = 0;
 		for (Item t: itemList) {
 			if (t instanceof Tree) {
 				treeList.add((Tree)t);
-				count++;
-				System.out.println("Tree " + count + ": " + t);
 			}
 		}
+		return treeList;
 	}
 	
-	public void getFlowers() {
+	public List<Flower> getFlowers() {
 		List<Flower> flowerList = new ArrayList<>();
-		int count = 0;
 		for (Item f : itemList) {
 			if (f instanceof Flower) {
 				flowerList.add((Flower) f);
-				count++;
-				System.out.println("Flower " + count + ": " + f);
 			}
 		}
+		return flowerList;
 	}
 	
-	public void getDecorations() {
+	public List<Decoration> getDecorations() {
 		List<Decoration> decorationList = new ArrayList<>();
-		int count = 0;
 		for (Item d: itemList) {
 			if (d instanceof Decoration) {
 				decorationList.add((Decoration)d);
-				count++;
-				System.out.println("Decoration " + count + ": " + d);
 			}
 		}
+		return decorationList;
 	}
 }
