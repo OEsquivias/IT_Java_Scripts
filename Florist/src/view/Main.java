@@ -23,7 +23,7 @@ public class Main {
 		controller.addDecoration(nameFlorist1, "wood", 47.5);
 		controller.addDecoration(nameFlorist1, "plastic", 30);
 		
-		controller.getAllItems(nameFlorist1);
+		controller.printAllItems(nameFlorist1);
 		
 		
 		String nameFlorist2 = "Flowerist";
@@ -31,7 +31,7 @@ public class Main {
 		controller.addTree(nameFlorist2, 5.95, 35);
 		controller.addFlower(nameFlorist2, "white", 6.0);
 		controller.addDecoration(nameFlorist2, "wood", 75);
-		controller.getAllItems(nameFlorist2);
+		controller.printAllItems(nameFlorist2);
 
 		
 	}

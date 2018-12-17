@@ -51,7 +51,7 @@ public class Controller {
 		currentFlorist.addDecoration(material, price);
 	}
 	
-	public void getAllTrees(String floristName) throws Exception {
+	public void printAllTrees(String floristName) throws Exception {
 		Florist currentFlorist = getFlorist(floristName);
 		int count = 1;
 		for (Tree t : currentFlorist.getTrees()) {
@@ -63,7 +63,7 @@ public class Controller {
 		
 	}
 	
-	public void getAllFlowers(String floristName) throws Exception {
+	public void printAllFlowers(String floristName) throws Exception {
 		Florist currentFlorist = getFlorist(floristName);
 		int count = 1;
 		for (Flower f : currentFlorist.getFlowers()) {
@@ -73,7 +73,7 @@ public class Controller {
 	}
 	
 	
-	public void getAllDecorations(String floristName) throws Exception {
+	public void printAllDecorations(String floristName) throws Exception {
 		Florist currentFlorist = getFlorist(floristName);
 		int count = 1;
 		for (Decoration d : currentFlorist.getDecorations()) {
@@ -83,10 +83,10 @@ public class Controller {
 	}
 	
 	
-	public void getAllItems(String floristName) throws Exception {
+	public void printAllItems(String floristName) throws Exception {
 		System.out.println(floristName + " stock:");
-		getAllTrees(floristName);
-		getAllFlowers(floristName);
-		getAllDecorations(floristName);	
+		printAllTrees(floristName);
+		printAllFlowers(floristName);
+		printAllDecorations(floristName);	
 	}
 }
